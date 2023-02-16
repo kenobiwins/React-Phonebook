@@ -23,16 +23,16 @@ export const App = () => {
     <>
       {!isRefreshing && (
         <Routes>
-          <Route path="/" element={<SharedLayout />}>
+          <Route path="" element={<SharedLayout />}>
             <Route index element={<Home />} />
             <Route
-              path="contacts"
+              path="/contacts"
               element={
                 <PrivateRoute redirectTo="/login" component={<Contacts />} />
               }
             />
             <Route
-              path="login"
+              path="/login"
               element={
                 <RestrictedRoute
                   redirectTo={'/contacts'}
@@ -41,7 +41,7 @@ export const App = () => {
               }
             />
             <Route
-              path="register"
+              path="/register"
               element={
                 <RestrictedRoute redirectTo="/" component={<Register />} />
               }

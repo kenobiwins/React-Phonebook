@@ -40,9 +40,7 @@ export const authSlice = createSlice({
         state.isRefreshing = false;
         state.isError = null;
       })
-      .addCase(refreshUser.rejected, state => {
-        state.isRefreshing = false;
-      }),
+      .addCase(refreshUser.rejected, state => (state = initialState)),
 });
 
 export const authReducer = authSlice.reducer;
